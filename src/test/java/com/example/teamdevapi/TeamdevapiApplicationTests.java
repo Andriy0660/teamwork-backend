@@ -1,0 +1,13 @@
+package com.example.teamdevapi;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class TeamdevapiApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
