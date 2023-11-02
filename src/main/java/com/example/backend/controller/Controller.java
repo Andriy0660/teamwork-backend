@@ -1,12 +1,12 @@
-package com.example.teamdevapi.controller;
+package com.example.backend.controller;
 
-import com.example.teamdevapi.dto.request.RecordRequest;
-import com.example.teamdevapi.dto.response.AllEmpsResponse;
-import com.example.teamdevapi.dto.response.CalculateSalaryResponse;
-import com.example.teamdevapi.entity.Employee;
-import com.example.teamdevapi.entity.Record;
-import com.example.teamdevapi.service.EmployeeService;
-import com.example.teamdevapi.service.RecordService;
+import com.example.backend.dto.request.RecordRequest;
+import com.example.backend.dto.response.AllEmpsResponse;
+import com.example.backend.dto.response.CalculateSalaryResponse;
+import com.example.backend.entity.Employee;
+import com.example.backend.entity.Record;
+import com.example.backend.service.EmployeeService;
+import com.example.backend.service.RecordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

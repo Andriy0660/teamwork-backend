@@ -1,6 +1,6 @@
-package com.example.teamdevapi.repository;
+package com.example.backend.repository;
 
-import com.example.teamdevapi.entity.Employee;
+import com.example.backend.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package com.example.teamdevapi.entity;
+package com.example.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

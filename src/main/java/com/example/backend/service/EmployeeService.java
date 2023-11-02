@@ -1,7 +1,7 @@
-package com.example.teamdevapi.service;
+package com.example.backend.service;
 
-import com.example.teamdevapi.entity.Employee;
-import com.example.teamdevapi.repository.EmployeeRepository;
+import com.example.backend.entity.Employee;
+import com.example.backend.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

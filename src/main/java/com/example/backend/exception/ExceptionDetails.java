@@ -1,4 +1,4 @@
-package com.example.teamdevapi.exception;
+package com.example.backend.exception;
 
 import lombok.Builder;
 import lombok.Getter;

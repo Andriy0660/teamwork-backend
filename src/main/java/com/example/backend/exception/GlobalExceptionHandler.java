@@ -1,4 +1,4 @@
-package com.example.teamdevapi.exception;
+package com.example.backend.exception;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

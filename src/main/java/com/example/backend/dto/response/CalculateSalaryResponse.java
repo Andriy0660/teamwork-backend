@@ -1,16 +1,14 @@
-package com.example.teamdevapi.dto.response;
+package com.example.backend.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AllEmpsResponse {
-    List<String> namesOfAllEmps;
+public class CalculateSalaryResponse {
+    double salary;
 }

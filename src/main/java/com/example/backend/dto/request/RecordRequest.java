@@ -1,4 +1,4 @@
-package com.example.teamdevapi.dto.request;
+package com.example.backend.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
