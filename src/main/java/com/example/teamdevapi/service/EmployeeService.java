@@ -13,6 +13,10 @@ import java.util.List;
 public class EmployeeService {
     private final EmployeeRepository repository;
     public void save(Employee employee) { repository.save(employee); }
+    public List<Employee> findAll(){ return repository.findAll(); }
+    public List<String> getNamesOfAllEmps(){
+        return findAll().stream().map(Employee::getName).toList();
+    }
     public HashSet<Employee> findAllByNameIsIn(HashSet<String> names){
         return repository.findAllByNameIsIn(names);
     }

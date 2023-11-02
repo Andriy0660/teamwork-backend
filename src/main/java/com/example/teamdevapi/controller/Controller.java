@@ -1,7 +1,7 @@
 package com.example.teamdevapi.controller;
 
-import com.example.teamdevapi.dto.request.CalculateSalaryRequest;
 import com.example.teamdevapi.dto.request.RecordRequest;
+import com.example.teamdevapi.dto.response.AllEmpsResponse;
 import com.example.teamdevapi.dto.response.CalculateSalaryResponse;
 import com.example.teamdevapi.entity.Employee;
 import com.example.teamdevapi.entity.Record;
@@ -40,13 +40,15 @@ public class Controller {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping
-    public ResponseEntity<CalculateSalaryResponse> calculateSalary(@RequestBody CalculateSalaryRequest request){
-        Employee employee = employeeService.findByName(request.getEmpName());
+    @GetMapping("/salary")
+    public ResponseEntity<CalculateSalaryResponse> calculateSalary(
+            @RequestParam(name = "empName") String empName,
+            @RequestParam(name = "date") LocalDate date){
+        Employee employee = employeeService.findByName(empName);
 
         List<Record> recordsForEmployeeInParticularDay =
             employee.getRecords().stream()
-                    .filter(e -> e.getDate().equals(request.getDate()))
+                    .filter(e -> e.getDate().equals(date))
                     .toList();
 
         double salary = recordsForEmployeeInParticularDay.stream()
@@ -55,6 +57,14 @@ public class Controller {
 
         CalculateSalaryResponse response = CalculateSalaryResponse.builder()
                 .salary(salary)
+                .build();
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping
+    public ResponseEntity<AllEmpsResponse> getNamesOfAllEmps(){
+        AllEmpsResponse response = AllEmpsResponse.builder()
+                .namesOfAllEmps(employeeService.getNamesOfAllEmps())
                 .build();
         return ResponseEntity.ok(response);
     }
