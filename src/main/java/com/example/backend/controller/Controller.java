@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
@@ -23,7 +26,10 @@ public class Controller {
     private final RecordService recordService;
 
     @PostMapping
-    public ResponseEntity<Void> addRecord(@RequestBody RecordRequest request){
+    public ResponseEntity<Void> addRecord(@RequestBody RecordRequest request) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\admin-kv\\IdeaProjects\\teamwork\\backend\\src\\main\\resources\\static\\records.txt",true));
+        writer.write(request.getEmpNames() + " - " + request.getPrice() + " - "+ LocalDate.now());
+        writer.close();
         Record record = Record.builder()
                 .price(request.getPrice())
                 .date(LocalDate.now())
